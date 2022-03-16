@@ -9,7 +9,9 @@ max_num = 0
 
 for i in range(n):
     number = list(map(int, input("입력: ").split()))
+    # 배열에서 가장 작은 수 고르기
     min_num = min(number)
+    # 작은 수 중 큰 수 고르기
     max_num = max(max_num, min_num)
     
 print(max_num)
