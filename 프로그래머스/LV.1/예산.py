@@ -14,8 +14,7 @@ budget은 예산을 나타내며, 1 이상 10,000,000 이하의 자연수입니�
 """
 
 
-
-
+# 내 코드
 def solution(d, budget):
     d.sort()
     answer = 0
@@ -26,3 +25,12 @@ def solution(d, budget):
         else:
             break
     return answer
+
+# 쩌는 코드
+def solution(d,budget):
+    d.sort()
+    answer = 0
+    while budget < sum(d):
+        # pop으로 가장 큰 수 부터 삭제
+        d.pop()
+    return len(d)
