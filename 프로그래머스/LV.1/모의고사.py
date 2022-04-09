@@ -23,7 +23,7 @@ def solution(answers):
     for student in students:
         count = 0
         for i in range (len(answers)):
-            if (answers[i] == student[i % len(answers)]):
+            if (answers[i] == student[i % len(student)]):
                 count += 1
         corr.append(count)
 
