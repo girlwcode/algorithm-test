@@ -15,16 +15,17 @@
 가장 높은 점수를 받은 사람이 여럿일 경우, return하는 값을 오름차순 정렬해주세요.
 """
 def solution(answers):
-    students = [[1,2,3,4,5],[2, 1, 2, 3, 2, 4, 2, 5],[3, 3, 1, 1, 2, 2, 4, 4, 5, 5]]
+    answer = []
+    students = [[1, 2, 3, 4, 5],[2, 1, 2, 3, 2, 4, 2, 5],[3, 3, 1, 1, 2, 2, 4, 4, 5, 5]]
     corr = []
     count = 0
     
-    for student in students :
+    for student in students:
         count = 0
         for i in range (len(answers)):
-            if (student[i] == answers[i//len(student)]):
+            if (answers[i] == student[i % len(answers)]):
                 count += 1
         corr.append(count)
-    print(corr)
-    
-    return print(corr)
+
+    answer = [i+1 for i, v in enumerate(corr) if v == max(corr)]
+    return answer
